@@ -34,7 +34,9 @@
     "lint": "eslint --ext .js src test",
     "report": "nyc report --reporter=html",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "nyc": {
     "include": [
@@ -62,7 +64,8 @@
     "react-router-redux": "^4.0.5",
     "redux": "^3.6.0",
     "redux-saga": "^0.14.0",
-    "warning": "^3.0.0"
+    "warning": "^3.0.0",
+    "snyk": "^1.316.1"
   },
   "peerDependencies": {
     "react": "15.x"
@@ -104,7 +107,7 @@
     "react": "global:React",
     "react-dom": "global:ReactDOM"
   },
-  "react-native" : {
+  "react-native": {
     "react-dom": false
   },
   "files": [
@@ -120,5 +123,6 @@
     "router.d.ts",
     "fetch.d.ts",
     "mobile.d.ts"
-  ]
+  ],
+  "snyk": true
 }
